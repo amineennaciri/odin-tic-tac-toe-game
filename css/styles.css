@@ -1,0 +1,40 @@
+* {
+    background-color: lightgray;
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+
+
+body {
+    display: grid;
+    grid-template-rows: 10% 90%;
+    width: 100vw;
+    height: 100vh;
+}
+
+.header {
+    grid-row: 1/2;
+}
+
+.main-content {
+    width: 600px;
+    height: 600px;
+    grid-row: 2/3;
+    display: grid;
+    grid-template-columns: repeat(3,33.33%);
+    grid-template-rows: repeat(3,33.33%);
+}
+
+.case {
+    width: 200px;
+    height: 200px;
+}
+
+.case span {
+    font-weight: 900;
+    text-decoration: solid;
+    font-size: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
