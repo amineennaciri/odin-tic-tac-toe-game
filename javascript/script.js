@@ -36,9 +36,7 @@ gameboard.firstPlay = undefined
 gameboard.playCount = 0;
 gameboard.playerOne = undefined;
 gameboard.playerTwo = undefined;
-/* gameboard.displayController = function(){
-    console.log('display')
-} */
+
 // methods
 gameboard.start = function(){
     gameboard.playerOne = (new GameboardGame('Player 1')).nameInput(); // create player
@@ -71,9 +69,9 @@ gameboard.tictactoe = function(e){
     if(gameboard.scoreBoard.innerText!=''){
         return ''
     }
-    console.log(e.srcElement)
+/*     console.log(e.srcElement)
     console.log(e.srcElement.firstChild)
-    console.log(e.srcElement.firstChild.innerText==='') 
+    console.log(e.srcElement.firstChild.innerText==='')  */
     // logic that keeps players from playing in spots that are already taken
     // and also enable players to play on a "1 turn principle"
     if(gameboard.lastPlay === undefined && e.srcElement.firstChild.innerText === ''){
