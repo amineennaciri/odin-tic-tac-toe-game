@@ -15,21 +15,26 @@ body {
 .header {
     grid-row: 1/2;
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 50% 10% 40%;
 }
 
 .header h1 {
     grid-column: 1/2;
 }
 
-.header button {
+.header .start, .header .restart{
     grid-column: 2/3;
     place-self: center;
     justify-self: start;
-    background-color: yellow;
+    background-color: yellowgreen;
     font-size: xx-large;
     text-decoration: solid;
     font-weight: 900;
+}
+.header .restart {
+    grid-column: 3/4;
+    background-color: yellow
+    ;
 }
 
 
@@ -65,4 +70,9 @@ body {
     text-decoration: solid;
     font-weight: 900;
     background-color: yellowgreen;   
+}
+
+
+.score-board, .main-content {
+    visibility: hidden;
 }

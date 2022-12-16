@@ -16,6 +16,7 @@ function GameboardGame(playerName){
 */
 const gameBox = document.querySelectorAll('.case')
 const scoreBoard = document.querySelector('.result')
+const btnStart = document.querySelector('.start')
 const btnRestart = document.querySelector('.restart')
 const xInput = 'x'
 const oInput = 'o'
@@ -27,6 +28,7 @@ console.log(gameBox)
 for(let i = 0;i<=gameBox.length-1;i++){
     gameBox[i].addEventListener('click',tictactoe)
 }
+btnStart.addEventListener('click', start)
 btnRestart.addEventListener('click', restart)
 
 function tictactoe(e){
@@ -84,6 +86,10 @@ function checkWin(){
     }
 }
 
+function start(){
+    document.querySelector('.main-content').style.visibility = 'visible'
+    document.querySelector('.score-board').style.visibility = 'visible'
+}
 
 function restart(){
     // init the game to it's first state
