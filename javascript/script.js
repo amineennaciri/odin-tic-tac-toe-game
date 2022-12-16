@@ -16,15 +16,18 @@ function GameboardGame(playerName){
 */
 const gameBox = document.querySelectorAll('.case')
 const scoreBoard = document.querySelector('.result')
+const btnRestart = document.querySelector('.restart')
 const xInput = 'x'
 const oInput = 'o'
 let lastPlay;
 let playCount = 0;
 console.log(gameBox)
 
+// event listeners
 for(let i = 0;i<=gameBox.length-1;i++){
     gameBox[i].addEventListener('click',tictactoe)
 }
+btnRestart.addEventListener('click', restart)
 
 function tictactoe(e){
     console.log(e.srcElement)
@@ -79,4 +82,15 @@ function checkWin(){
     }else if(playCount===9){
         scoreBoard.innerText = `It's a Tie!`
     }
+}
+
+
+function restart(){
+    // init the game to it's first state
+    for(let i = 0;i<=gameBox.length-1;i++){
+        gameBox[i].firstChild.innerText = ''
+    }
+    scoreBoard.innerText = "";
+    lastPlay = undefined;
+    playCount = 0;
 }

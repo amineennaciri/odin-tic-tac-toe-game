@@ -14,7 +14,24 @@ body {
 
 .header {
     grid-row: 1/2;
+    display: grid;
+    grid-template-columns: 50% 50%;
 }
+
+.header h1 {
+    grid-column: 1/2;
+}
+
+.header button {
+    grid-column: 2/3;
+    place-self: center;
+    justify-self: start;
+    background-color: yellow;
+    font-size: xx-large;
+    text-decoration: solid;
+    font-weight: 900;
+}
+
 
 .main-content {
     width: 600px;
