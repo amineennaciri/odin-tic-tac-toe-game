@@ -18,8 +18,11 @@ const gameBox = document.querySelectorAll('.case')
 const scoreBoard = document.querySelector('.result')
 const btnStart = document.querySelector('.start')
 const btnRestart = document.querySelector('.restart')
+const btnPlayerId = document.querySelector('.playerId')
 const xInput = 'x'
 const oInput = 'o'
+let playerOne;
+let playerTwo;
 let lastPlay;
 let playCount = 0;
 console.log(gameBox)
@@ -53,42 +56,52 @@ function tictactoe(e){
     if(playCount>=5){
         checkWin();// call this function
     }
+    // which players turn?
+    if(playCount%2==0){
+        btnPlayerId.innerText = `It's ${playerOne}'s turn now!`;
+    }else if(playCount%2!=0){
+        btnPlayerId.innerText = `It's ${playerTwo}'s turn now!`
+    }
 }
 
 function checkWin(){
     if(gameBox[0].firstChild.innerText!=''&& gameBox[0].firstChild.innerText === gameBox[1].firstChild.innerText && 
     gameBox[1].firstChild.innerText === gameBox[2].firstChild.innerText){
         //alert('you win')
-        scoreBoard.innerText = 'You Win !'
+        //scoreBoard.innerText = 'You Win !'
+        return gameBox[0].firstChild.innerText===xInput? scoreBoard.innerText = `${playerOne} Win !` : scoreBoard.innerText = `${playerTwo} Win !`
     } else if(gameBox[3].firstChild.innerText!=''&& gameBox[3].firstChild.innerText === gameBox[4].firstChild.innerText && 
     gameBox[4].firstChild.innerText === gameBox[5].firstChild.innerText){
-        scoreBoard.innerText = 'You Win !'
+        return gameBox[0].firstChild.innerText===xInput? scoreBoard.innerText = `${playerOne} Win !` : scoreBoard.innerText = `${playerTwo} Win !`
     } else if(gameBox[6].firstChild.innerText!=''&& gameBox[6].firstChild.innerText === gameBox[7].firstChild.innerText && 
     gameBox[7].firstChild.innerText === gameBox[8].firstChild.innerText){
-        scoreBoard.innerText = 'You Win !'
+        return gameBox[0].firstChild.innerText===xInput? scoreBoard.innerText = `${playerOne} Win !` : scoreBoard.innerText = `${playerTwo} Win !`
     } else if(gameBox[0].firstChild.innerText!=''&& gameBox[0].firstChild.innerText === gameBox[3].firstChild.innerText && 
     gameBox[3].firstChild.innerText === gameBox[6].firstChild.innerText){
-        scoreBoard.innerText = 'You Win !'
+        return gameBox[0].firstChild.innerText===xInput? scoreBoard.innerText = `${playerOne} Win !` : scoreBoard.innerText = `${playerTwo} Win !`
     } else if(gameBox[1].firstChild.innerText!=''&& gameBox[1].firstChild.innerText === gameBox[4].firstChild.innerText && 
     gameBox[4].firstChild.innerText === gameBox[7].firstChild.innerText){
-        scoreBoard.innerText = 'You Win !'
+        return gameBox[0].firstChild.innerText===xInput? scoreBoard.innerText = `${playerOne} Win !` : scoreBoard.innerText = `${playerTwo} Win !`
     } else if(gameBox[2].firstChild.innerText!=''&& gameBox[2].firstChild.innerText === gameBox[5].firstChild.innerText && 
     gameBox[5].firstChild.innerText === gameBox[8].firstChild.innerText){
-        scoreBoard.innerText = 'You Win !'
+        return gameBox[0].firstChild.innerText===xInput? scoreBoard.innerText = `${playerOne} Win !` : scoreBoard.innerText = `${playerTwo} Win !`
     } else if(gameBox[0].firstChild.innerText!=''&& gameBox[0].firstChild.innerText === gameBox[4].firstChild.innerText && 
     gameBox[4].firstChild.innerText === gameBox[8].firstChild.innerText){
-        scoreBoard.innerText = 'You Win !'
+        return gameBox[0].firstChild.innerText===xInput? scoreBoard.innerText = `${playerOne} Win !` : scoreBoard.innerText = `${playerTwo} Win !`
     } else if(gameBox[6].firstChild.innerText!=''&& gameBox[6].firstChild.innerText === gameBox[4].firstChild.innerText && 
     gameBox[4].firstChild.innerText === gameBox[2].firstChild.innerText){
-        scoreBoard.innerText = 'You Win !'
+        return gameBox[0].firstChild.innerText===xInput? scoreBoard.innerText = `${playerOne} Win !` : scoreBoard.innerText = `${playerTwo} Win !`
     }else if(playCount===9){
         scoreBoard.innerText = `It's a Tie!`
     }
 }
 
 function start(){
+    playerOne = prompt('Player 1, please enter your name.')
+    playerTwo = prompt('Player 2, please enter your name.')
     document.querySelector('.main-content').style.visibility = 'visible'
     document.querySelector('.score-board').style.visibility = 'visible'
+    btnPlayerId.innerText = `It's ${playerOne}'s turn now!`
 }
 
 function restart(){
