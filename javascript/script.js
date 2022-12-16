@@ -15,6 +15,7 @@ function GameboardGame(playerName){
 }
 */
 const gameBox = document.querySelectorAll('.case')
+const scoreBoard = document.querySelector('.result')
 const xInput = 'x'
 const oInput = 'o'
 let lastPlay;
@@ -52,29 +53,30 @@ function tictactoe(e){
 function checkWin(){
     if(gameBox[0].firstChild.innerText!=''&& gameBox[0].firstChild.innerText === gameBox[1].firstChild.innerText && 
     gameBox[1].firstChild.innerText === gameBox[2].firstChild.innerText){
-        alert('you win')
+        //alert('you win')
+        scoreBoard.innerText = 'You Win !'
     } else if(gameBox[3].firstChild.innerText!=''&& gameBox[3].firstChild.innerText === gameBox[4].firstChild.innerText && 
     gameBox[4].firstChild.innerText === gameBox[5].firstChild.innerText){
-        alert('you win')
+        scoreBoard.innerText = 'You Win !'
     } else if(gameBox[6].firstChild.innerText!=''&& gameBox[6].firstChild.innerText === gameBox[7].firstChild.innerText && 
     gameBox[7].firstChild.innerText === gameBox[8].firstChild.innerText){
-        alert('you win')
+        scoreBoard.innerText = 'You Win !'
     } else if(gameBox[0].firstChild.innerText!=''&& gameBox[0].firstChild.innerText === gameBox[3].firstChild.innerText && 
     gameBox[3].firstChild.innerText === gameBox[6].firstChild.innerText){
-        alert('you win')
+        scoreBoard.innerText = 'You Win !'
     } else if(gameBox[1].firstChild.innerText!=''&& gameBox[1].firstChild.innerText === gameBox[4].firstChild.innerText && 
     gameBox[4].firstChild.innerText === gameBox[7].firstChild.innerText){
-        alert('you win')
+        scoreBoard.innerText = 'You Win !'
     } else if(gameBox[2].firstChild.innerText!=''&& gameBox[2].firstChild.innerText === gameBox[5].firstChild.innerText && 
     gameBox[5].firstChild.innerText === gameBox[8].firstChild.innerText){
-        alert('you win')
+        scoreBoard.innerText = 'You Win !'
     } else if(gameBox[0].firstChild.innerText!=''&& gameBox[0].firstChild.innerText === gameBox[4].firstChild.innerText && 
     gameBox[4].firstChild.innerText === gameBox[8].firstChild.innerText){
-        alert('you win')
+        scoreBoard.innerText = 'You Win !'
     } else if(gameBox[6].firstChild.innerText!=''&& gameBox[6].firstChild.innerText === gameBox[4].firstChild.innerText && 
     gameBox[4].firstChild.innerText === gameBox[2].firstChild.innerText){
-        alert('you win')
+        scoreBoard.innerText = 'You Win !'
     }else if(playCount===9){
-        alert(`it's a tie!`)
+        scoreBoard.innerText = `It's a Tie!`
     }
 }
